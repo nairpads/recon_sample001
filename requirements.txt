@@ -1,36 +1,3 @@
-# recon_rf_dashboard
-
-## 🧾 Integrated Reconciliation Dashboard
-
-This Streamlit app performs intelligent reconciliation between parsed MT940 files and ledger entries using machine learning and rule-based logic.
-
-### 🚀 Features
-- Upload parsed MT940 and ledger CSV files
-- Generate pairwise combinations of transactions
-- Match using:
-  - Amount difference
-  - Date difference
-  - Debit/Credit mirror
-  - Reference and narration match
-- Train a Random Forest model to predict likely matches
-- Interactive dashboard with three tabs:
-  - 🔍 High Confidence Matches (Prediction > 90%)
-  - ⚠️ Medium/Low Confidence Matches (Prediction < 90%)
-  - 🔁 1-to-Many Candidates
-- Filters for confidence, amount/date difference, references, and narration
-- Downloadable outputs for each view
-
-### 🗂️ File Inputs
-- **Parsed MT940 CSV**
-  - Must include columns: `date`, `amount`, `dc_mark`, `ref`, `narration`
-- **Ledger CSV**
-  - Must include: `date`, `amount`, `dr_cr`, `ref_no`, `narration`
-
-### 💾 Output Files
-- `recon_rf_output.csv`: Full pairwise dataset with confidence scores
-- `high_confidence_matches.csv`: Matches with prediction ≥ 90%
-- `med_low_matches.csv`: Filtered matches below 90%
-- `1_to_many_candidates.csv`: 1-to-many pattern candidates
 
 ### 🧪 Requirements
 ```
